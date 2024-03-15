@@ -17,7 +17,9 @@ export class ProductInfoComponent {
   ) {
     route.params.subscribe((param) => {
       this.product = productService.getById(+param['id']);
-      return this.product;
+      if (this.product) {
+        return this.product;
+      }
     });
   }
 
@@ -38,7 +40,7 @@ export class ProductInfoComponent {
   }
 
   getUrl() {
-    return this.product.getImgSource();
+    return this.product.getImgUrl();
   }
 
   getId() {

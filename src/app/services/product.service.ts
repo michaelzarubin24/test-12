@@ -60,7 +60,7 @@ export class ProductService {
 
   public add(
     title: string,
-    imgSrc: string,
+    imgUrl: string,
     price: number,
     description: string,
     category: string
@@ -68,7 +68,7 @@ export class ProductService {
     this.products.push(
       new Product(
         this.products.length,
-        imgSrc || this.getImageByCategory(this.getCategory(category)),
+        imgUrl || this.getImageByCategory(this.getCategory(category)),
         title,
         price,
         description,
@@ -108,7 +108,7 @@ export class ProductService {
   }
 
   getById(id: number) {
-    this.products.find((product) => product.getID() === id);
+    return this.products.find((product) => product.getID() === id);
   }
 
   getByCategory(data: string) {
@@ -124,13 +124,14 @@ export class ProductService {
         return 'https://www.southernliving.com/thmb/3x3cJaiOvQ8-3YxtMQX0vvh1hQw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg';
       }
       case Category.Burger: {
-        return 'https://lavanda.com.ua/image/cache/catalog/image/cache/catalog/product/burger/burger-1500x1500.webphttps://cheef.in.ua/image/cache/catalog/Burgery/Bif-burger-1500x1500.jpg';
+        return 'https://www.eatingwell.com/thmb/aKA6WL4j01orJ6F7v9bF4PH6B7Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/air-fryer-cheeseburgers-9e0cf0071bcb4b8d9bc806cabfb61347.jpg';
       }
       case Category.Shaverma: {
         return 'https://140539841.cdn6.editmysite.com/uploads/1/4/0/5/140539841/s470282083412145691_p34_i3_w1500.png';
       }
-      default:
-        break;
+      default: {
+        return 'https://static.vecteezy.com/system/resources/previews/025/067/651/non_2x/tacos-with-ai-generated-free-png.png';
+      }
     }
   }
 }

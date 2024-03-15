@@ -24,7 +24,7 @@ export class ProductComponent {
   }
 
   getUrl() {
-    return this.product.getImgSource();
+    return this.product.getImgUrl();
   }
 
   getId() {

@@ -4,29 +4,29 @@ import { IProduct } from '../interfaces/IProduct';
 export class Product implements IProduct {
   constructor(
     private id: number,
-    private imageSrc: string,
+    private imageUrl: string,
     private title: string,
     private price: number,
     private description: string,
     private category: Category
   ) {}
 
-  getID = () => {
+  getID(): number {
     return this.id;
-  };
-  getImgSource = () => {
-    return this.imageSrc;
-  };
-  getTitle = () => {
+  }
+  getImgUrl(): string {
+    return this.imageUrl;
+  }
+  getTitle(): string {
     return this.title;
-  };
-  getPrice = () => {
+  }
+  getPrice(): number {
     return this.price;
-  };
-  getDescription = () => {
+  }
+  getDescription(): string {
     return this.description;
-  };
-  getCategory = () => {
+  }
+  getCategory(): Category {
     return this.category;
-  };
+  }
 }

@@ -21,8 +21,8 @@ export class HeaderComponent {
       path: '/pizzas',
     },
     {
-      title: 'Tacos',
-      path: '/tacos',
+      title: 'Shavermas',
+      path: '/shavermas',
     },
     {
       title: 'Log In',

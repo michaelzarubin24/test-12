@@ -2,7 +2,7 @@ import { Category } from '../enums/Category';
 
 export interface IProduct {
   getID: () => number;
-  getImgSource: () => string;
+  getImgUrl(): string;
   getTitle: () => string;
   getPrice: () => number;
   getDescription: () => string;

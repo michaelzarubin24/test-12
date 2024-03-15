@@ -10,6 +10,6 @@ export class BurgerComponent {
   constructor(private productService: ProductService) {}
 
   getProducts() {
-    this.productService.getByCategory('Burger');
+    return this.productService.getByCategory('burger');
   }
 }
